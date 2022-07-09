@@ -44,8 +44,75 @@ export async function getLedgerTransaction(ledgerId) {
   return ledgers;
 }
 
+export async function getTransaction(transactionId) {
+  const response = await fetch(`${API_ROOT}/transaction/ETH_USD/${transactionId}`);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Could not fetch ledger.');
+  }
+
+  const transactions = [];
+
+  for (const key in data) {
+    const obj = {
+      id: key,
+      ...data[key],
+    };
+
+    transactions.push(obj);
+  }
+
+  return transactions;
+}
+
 export async function getTransactions() {
-  const response = await fetch(`${API_ROOT}/transaction`);
+  const response = await fetch(`${API_ROOT}/transaction/ETH_USD`);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Could not fetch ledger.');
+  }
+
+  const transactions = [];
+
+  for (const key in data) {
+    const obj = {
+      id: key,
+      ...data[key],
+    };
+
+    transactions.push(obj);
+  }
+
+  return transactions;
+}
+
+export async function getTransactionsBoughtUnReconciled() {
+  const response = await fetch(`${API_ROOT}/transaction/ETH_USD/bought/unreconciled`);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Could not fetch ledger.');
+  }
+
+  const transactions = [];
+
+  for (const key in data) {
+    const obj = {
+      id: key,
+      ...data[key],
+    };
+
+    transactions.push(obj);
+  }
+
+  return transactions;
+}
+
+
+export async function getTransactionsSoldUnReconciled() {
+  const response = await fetch(`${API_ROOT}/transaction/ETH_USD/sold/unreconciled`);
   const data = await response.json();
 
   if (!response.ok) {

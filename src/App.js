@@ -6,7 +6,7 @@ import Ledger from './page/Ledger';
 import Transactions from './page/Transactions';
 import LedgerTransactions from './page/LedgerTransactions';
 import Sample from './page/Sample';
-
+import Sandbox from './page/Sandbox';
 import Container from '@mui/material/Container';
 // import './App.css';
 
@@ -26,12 +26,16 @@ function App() {
             </Route>        
             <Route path='/welcome' element={<Welcome />}>
             </Route>
+            <Route path='/ledger/:ledgerId' element={<Ledger />}>
+            </Route>            
             <Route path='/ledger' element={<Ledger />}>
             </Route>
             <Route path='/transactions' element={<Transactions />}>
             </Route>
             <Route path='/ledger-transactions/:ledgerId' element={<LedgerTransactions />}>
-            </Route>            
+            </Route>          
+            <Route path='/sandbox/:ledgerId' element={<Sandbox />}>
+            </Route>     
           </Routes>
         </main>
       </Container>

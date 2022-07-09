@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Pages
+## Ledger
+
+This page is used to list all sold transactions that have been reconciled.  
+
+Click on the ledger Id to see the corresponding buy transactions associated with the sold transaction.
+
+## Transactions
+
+This page is used to reconcile sold transactions to its corresponding buy transactions.
+
+Opening this page lists all transaction that have been sold that do not have a corresponding buy transaction.
+
+Click on a sell transaction and select the buy transactions associated the sell.
+
